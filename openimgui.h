@@ -68,6 +68,7 @@
 extern float omg_cursorpos[2]; //Defaults to zero
 extern float omg_cursorpos_presuck[2]; //Defaults to zero
 extern int omg_cursor_has_been_sucked;
+extern int omg_cursor_was_inside;  //Set 
 extern float omg_buttonjump[2]; //Defaults to zero
 // Setting for users using 
 
