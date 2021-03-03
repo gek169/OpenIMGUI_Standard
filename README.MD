@@ -79,7 +79,7 @@ if(
 //text and text size hint. The handling of hints is implementation specific
 				"Click me and I toggle color!", 16, 
 //sucks, buttonjumpx, buttonjumpy
-				1, 20, 20, 
+				1, 0.4, 0.4, 
 //hints for the box and the text respectively. Hint handling is implementation specific.
 				0xFFFFFF, haveclicked?0xFF0000:0x00) 
 	&& omg_cb == 1
