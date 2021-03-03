@@ -32,7 +32,11 @@ float x, float y,
 float xdim, float ydim, 
 //sucks- indicates whether or not this gui element can "suck" up the cursor in button-controlled modes.
 //Static text boxes should not suck up the cursor.
-			int sucks, float buttonjumpx, float buttonjumpy, 
+			int sucks, 
+//Button jump- How far should the keymode cursor jump in X and Y to reach neighboring buttons?
+//Note that if the cursor jumps outside the bounds of the screen,
+//it will wrap around to the other side.
+			float buttonjumpx, float buttonjumpy, 
 //Implementation-specific hints for drawing this box.
 			int hints);
 
