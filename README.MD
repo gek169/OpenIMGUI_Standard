@@ -11,13 +11,13 @@ There is a surprising lack of cross platform GUI implementations which are fast 
 
 Nuklear (header only, public domain, C89) would seem to be appropriate, but...
 
-1) it requires loading ttf fonts at runtime (Which means you obviously have to be able to render ttf fonts...)
+1) Implementing its methods is poorly documented
 
-2) Implementing its methods is poorly documented
+2) It is unclear how exactly user input events are to be polled.
 
-3) It is unclear how exactly user input events are to be polled.
+3) Initializing the library appears to be virtually impossible
 
-4) Initializing the library appears to be virtually impossible
+4) The library works internally on RGBA which is wasted processing power on lower end machines.
 
 Not only does this library require zero initialization, it keeps very little state- only recent user inputs.
 
@@ -63,7 +63,7 @@ in the file where you are going to implement OpenIMGUI's methods, you should
 #define OPENIMGUI_IMPL
 ```
 
-before including the header-only library.
+before including the header.
 
 
 when rendering gui elements (textboxes, boxes) the return value tells you whether or not the cursor intersects the box (or is highlighting it)
