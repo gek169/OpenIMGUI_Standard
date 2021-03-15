@@ -23,19 +23,19 @@ you need the following functionality:
 8) The ability to detect text input (for text boxes) (Implementation specific)
 
 Using only this functionality, it is variably difficult to implement all common GUI elements:
-1) All forms of button. (trivial)
-2) All forms of checkbox.
+1) All forms of button. (trivial) (Demonstrated in menu.c in TinyGL)
+2) All forms of checkbox. (Demonstrated in menu.c in TinyGL)
 3) Textboxes- if the user has clicked while the cursor is above a textbox, redirect text input 
 	to the textbox until a click is registered outside the textbox.
 	If the textbox is not editable, do not allow the user to type in the box.
-4) Sliders- Varies depending on cursor input mode.
+4) Sliders- Varies depending on cursor input mode. (Demonstrated in menu.c in TinyGL)
 	a) for direct cursor input such as a mouse:
 		A button which follows the mouse cursor between two coordinates,
 		after being clicked and before the click is released.
 	b) for keyboard input/directional keys:
 		A button which moves a small fixed amount when directional keys are pressed in the corresponding directions.
 5) Images- A box or text box with an image decoration.
-6) Lists- A text box containing a textual list.
+6) Lists- A text box containing a textual list. (trivial)
 
 Not only does this library require zero initialization, it keeps very little state- only recent user inputs.
 
