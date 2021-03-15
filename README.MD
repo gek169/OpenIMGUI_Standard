@@ -1,5 +1,7 @@
 # Open Immediate Mode GUI Standard Proposal
 
+![OpenIMGUI](menu.gif)
+
 Written by Gek in 2021
 
 simple demo available in my TinyGL repository
