@@ -1,23 +1,41 @@
 # Open Immediate Mode GUI Standard Proposal
 
-Written by Gek in 2020
+Written by Gek in 2021
 
 simple demo available in my TinyGL repository
 
 https://www.github.com/gek169/TinyGLPlusPlus.git
 
+There are a vast array of so-called "portable" and so-called "flexible" UI libraries out there.
 
-There is a surprising lack of cross platform GUI implementations which are fast and portable.
+Many are flawed because they do not support arbitrary renderers, while
+others are flawed because they have far too many widgets and methods to implement.
 
-Nuklear (header only, public domain, C89) would seem to be appropriate, but...
+Fundamentally, to implement any kind of graphical user interface of any complexity,
+you need the following functionality:
+1) The ability to render text.
+2) The ability to render a box (Styled with an image, color scheme gradient, whatever)
+3) The ability to render a box that fits text within it
+4) The ability to handle "hints" about how to render boxes and text.
+5) The ability to detect if a cursor (x,y coordinate) intersects with a box
+6) The ability to have a virtual cursor which can move between buttons using keys.
+7) The ability to detect a "cursor button" being pushed.
+8) The ability to detect text input (for text boxes) (Implementation specific)
 
-1) Implementing its methods is poorly documented
-
-2) It is unclear how exactly user input events are to be polled.
-
-3) Initializing the library appears to be virtually impossible
-
-4) The library works internally on RGBA which is wasted processing power on lower end machines.
+Using only this functionality, it is variably difficult to implement all common GUI elements:
+1) All forms of button. (trivial)
+2) All forms of checkbox.
+3) Textboxes- if the user has clicked while the cursor is above a textbox, redirect text input 
+	to the textbox until a click is registered outside the textbox.
+	If the textbox is not editable, do not allow the user to type in the box.
+4) Sliders- Varies depending on cursor input mode.
+	a) for direct cursor input such as a mouse:
+		A button which follows the mouse cursor between two coordinates,
+		after being clicked and before the click is released.
+	b) for keyboard input/directional keys:
+		A button which moves a small fixed amount when directional keys are pressed in the corresponding directions.
+5) Images- A box or text box with an image decoration.
+6) Lists- A text box containing a textual list.
 
 Not only does this library require zero initialization, it keeps very little state- only recent user inputs.
 
